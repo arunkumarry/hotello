@@ -28,9 +28,9 @@ gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 
 #gem 'carrierwave'
-gem "figaro"
+#gem "figaro"
 #gem "fog-aws"
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 4.2.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
