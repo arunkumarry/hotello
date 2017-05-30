@@ -26,6 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
 gem 'pg', group: :production
+
+#gem 'carrierwave'
+gem "figaro"
+#gem "fog-aws"
+gem "paperclip", "~> 5.0.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
