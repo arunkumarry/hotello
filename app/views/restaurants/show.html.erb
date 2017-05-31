@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @restaurant.avatar.url %>
-
+<div class="col-md-3">
+	<%= image_tag @restaurant.avatar.url, class: "img-set" %>
+</div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-4">
+	<div class="col-md-6">
 		<div class="well">
 			<p>
 			  <strong>Name:</strong>
@@ -28,5 +29,5 @@
 	</div>
 </div>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-primary" %> |
-<%= link_to 'Back', restaurants_path, class: "btn btn-info" %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-primary button-padding" %>
+<%= link_to 'Back', restaurants_path, class: "btn btn-info button-padding" %>
