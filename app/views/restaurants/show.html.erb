@@ -1,16 +1,15 @@
 <!-- <p id="notice"><%= notice %></p> -->
-
-<div class="col-md-3">
-	<%= image_tag @restaurant.avatar.url, class: "img-set" %>
-</div>
 <div class="row">
-	<div class="col-md-6">
-		<div class="well">
-			<p>
-			  <strong>Name:</strong>
-			  <%= @restaurant.name %>
-			</p>
+	<div class="col-md-2">
+		<%= image_tag @restaurant.avatar.url, class: "img-set" %>
+	</div>
 
+	<h2 class="text-center show-text">
+		<%= @restaurant.name %>
+	</h2>
+
+	<div class="col-md-6 col-md-push-1">
+		<div class="well">
 			<p>
 			  <strong>Address:</strong>
 			  <%= @restaurant.address %>
@@ -23,13 +22,38 @@
 
 			<p>
 			  <strong>Website:</strong>
-			  <%= @restaurant.website %>
+			  <%= link_to @restaurant.website, @restaurant.website %>
 			</p>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-md-push-2">
+		<div class="well">
+			<h5 class="text-center">Advertisements Here!!!</h5>
 		</div>
 	</div>
 </div>
 
-<%= link_to "Wrie a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<div class="row">
+	<div class="col-md-2 write-review">
+		<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+	</div>
+
+<h3 class="text-center show-text">Reviews & Ratings</h3>
+
+	<div class="col-md-8">
+		<div class="well">
+			<% if @reviews.blank? %>
+				<h4>No reviews yet. Add one!</h4>
+			<% else %>
+				<% @reviews.each do |review| %>
+					<p><%= review.rating %></p>
+					<p><%= review.comment %></p>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-primary button-padding" %>
 <%= link_to 'Back', restaurants_path, class: "btn btn-info button-padding" %>
